@@ -2,21 +2,25 @@
 
 public partial class MainPage : ContentPage
 {
-	
-bool estaMorto=false;
-bool estaPulando=false;
-const int tempoEntreFrames=25;
-int velocidade1=0;
-int velocidade2=0;
-int velocidade3=0;
-int velocidade4=0;
-int velocidade5=0;
-int velocidade=0;
-int larguraJanela=0;
-int alturaJanela=0;
+	Player player;
+	bool estaMorto = false;
+	bool estaPulando = false;
+	const int tempoEntreFrames = 25;
+	int velocidade1 = 0;
+	int velocidade2 = 0;
+	int velocidade3 = 0;
+	int velocidade4 = 0;
+	int velocidade5 = 0;
+	int velocidade = 0;
+	int larguraJanela=0;
+	int alturaJanela=0;
+
 	public MainPage()
 	{
 		InitializeComponent();
+
+		player = new Player(ImgSamurai);
+		player.Run();
 	}
     protected override void OnSizeAllocated(double width, double height)
     {
@@ -27,12 +31,12 @@ int alturaJanela=0;
 
 	void CalculaVelocidade(double width)
 	{
-		velocidade1=(int)(width*0.001);
-		velocidade2=(int)(width*0.004);
-		velocidade3=(int)(width*0.008);
-		velocidade4=(int)(width*0.012);
-		velocidade5=(int)(width*0.016);
-		velocidade=(int)(width*0.01);
+		velocidade1 = (int)(width*0.001);
+		velocidade2 = (int)(width*0.004);
+		velocidade3 = (int)(width*0.008);
+		velocidade4 = (int)(width*0.012);
+		velocidade5 = (int)(width*0.016);
+		velocidade = (int)(width*0.01);
 	}
 
 	void CorrigeTamanhoCenario(double width, double height)

@@ -1,16 +1,18 @@
+using FFImageLoading.Maui;
+
 namespace correneguin;
 
 public class Animacao
 {
-    protected List<String> Animacao1 =  new List<String>();
-    protected List<String> Animacao2 = new List<String>();
+    protected List<String> animacao1 =  new List<String>();
+    protected List<String> animacao2 = new List<String>();
 
     protected bool loop = true;
     protected int animacaoAtiva = 1;
     bool parado = true;
     int frameAtual = 1;
-    protected Image compImagem;
-    public Animacao(Image a)
+    protected CachedImage compImagem;
+    public Animacao(CachedImage a)
     {
         compImagem = a;
     }
@@ -38,8 +40,8 @@ public class Animacao
         int tamanhoAnimacao = 0;
         if (animacaoAtiva ==  1)
         {
-            nomeArquivo = Animacao1[frameAtual];
-            tamanhoAnimacao = Animacao1.Count;
+            nomeArquivo = animacao1[frameAtual];
+            tamanhoAnimacao = animacao1.Count;
         }
 
          else if(animacaoAtiva == 2)
@@ -47,13 +49,8 @@ public class Animacao
             nomeArquivo = animacao2[frameAtual];
             tamanhoAnimacao = animacao2.Count;
         }
-        else if(animacaoAtiva == 3)
-        {
-            nomeArquivo = animacao3[frameAtual];
-            tamanhoAnimacao = animacao3.Count;
-        }
 
-        compImage.Source = ImageSource.FromFile(nomeArquivo);
+        compImagem.Source = ImageSource.FromFile(nomeArquivo);
         frameAtual++;
 
         if(frameAtual >= tamanhoAnimacao)

@@ -5,14 +5,14 @@ namespace correneguin;
 public delegate void CallBack();
 public class Player : Animacao
 {
-    public Player(CachedImage a): base (a)
+    public Player(CachedImage a): base(a)
     {
-        //Animaçao do carro andando
-        for(int i = 1; i <= 4; i++)
-            animacao1.Add($"carro{i.ToString("D2")}.png");
-        //Animação da explosão
-        for(int i = 1; i < 6; i++)
-            animacao2.Add($"morreu{i.ToString("D2")}.png");
+        //Animaçao do samurai andando
+        for(int i = 1; i <= 8; i++)
+            animacao1.Add($"corre{i.ToString("D2")}.png");
+        //Animação de morte
+        for(int i = 1; i <= 3; i++)
+            animacao2.Add($"comes{i.ToString("D2")}.png");
         SetAnimacaoAtiva(1);
     }
 
