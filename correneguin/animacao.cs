@@ -11,8 +11,8 @@ public class Animacao
     protected int animacaoAtiva = 1;
     bool parado = true;
     int frameAtual = 1;
-    protected CachedImage compImagem;
-    public Animacao(CachedImage a)
+    protected CachedImageView compImagem;
+    public Animacao(CachedImageView a)
     {
         compImagem = a;
     }

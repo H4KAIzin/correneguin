@@ -1,94 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
+             xmlns:ff="clr-namespace:FFImageLoading.Maui;assembly=FFImageLoading.Maui"
              x:Class="correneguin.MainPage"
              Shell.NavBarIsVisible="False">
     <Grid>
         <HorizontalStackLayout  x:Name="HSLayer1">
             <Image Source="image1.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image1.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image1.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout    x:Name="HSLayer2">
             <Image Source="image2.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image2.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image2.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout    x:Name="HSLayer3">
             <Image Source="image3.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image3.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image3.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout x:Name="HSLayer4">
             <Image Source="image4.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image4.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image4.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout  x:Name="HSLayer5">
             <Image Source="image5.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image5.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
             <Image Source="image5.png"
-                Aspect="Fill"
-                VerticalOptions="End"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"/>
         </HorizontalStackLayout>
 
         <HorizontalStackLayout   x:Name="HSLayerChao">
             <Image Source="imagechao.png"
-                Aspect="Fill"
-                VerticalOptions="End"
-                HorizontalOptions="Start"
-                HeightRequest="75"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   HeightRequest="75"/>
             <Image Source="imagechao.png"
-                Aspect="Fill"
-                VerticalOptions="End"
-                HorizontalOptions="Start"
-                HeightRequest="75"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   HeightRequest="75"/>
             <Image Source="imagechao.png"
-                Aspect="Fill"
-                VerticalOptions="End"
-                HorizontalOptions="Start"
-                HeightRequest="75"/>
+                   Aspect="Fill"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   HeightRequest="75"/>
         </HorizontalStackLayout>
 
-        <ff:CachedImage
-                     CacheType="Memory"
-                     CacheDuration="365"
-                     x:Name="ImgSamurai"
-                     WidthRequest="200"
-                     HorizontalOptions="Center"
-                     BackgroundColor="Black"/>
+        <ff:CachedImageView
+            Margin="0,0,0,150"
+            CacheType="All"
+            CacheDuration="365"
+            x:Name="ImgSamurai"
+            WidthRequest="200"
+            HeightRequest="200"
+            HorizontalOptions="Center"
+            VerticalOptions="End"/>
     </Grid>
 </ContentPage>
