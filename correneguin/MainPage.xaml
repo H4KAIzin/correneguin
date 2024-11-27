@@ -84,7 +84,7 @@
         </HorizontalStackLayout>
 
         <ff:CachedImageView
-            Margin="0,0,0,150"
+            Margin="0,0,0,110"
             CacheType="All"
             CacheDuration="365"
             x:Name="ImgSamurai"
@@ -92,5 +92,12 @@
             HeightRequest="200"
             HorizontalOptions="Center"
             VerticalOptions="End"/>
+
+            <Image Source="pau01.png"
+                     x:Name="pau"
+                     HeightRequest="100"/>
+              <Image Source="pau02.png"
+                     x:Name="paudois"
+                     HeightRequest="100"/>
     </Grid>
 </ContentPage>

@@ -4,9 +4,16 @@ namespace correneguin;
 public partial class MainPage : ContentPage
 {
 	Player player;
+	Inimigos inimigos;
 	bool estaMorto = false;
 	bool estaPulando = false;
+	bool estaNoChao = true;
+	bool estaNoAr = false;
 	const int tempoEntreFrames = 25;
+	const int forcaGravidade = 6;
+	const int forcaPulo = 8;
+	const int maxTempoPulando = 6;
+	const int MaxTempoNoAr = 4;
 	int velocidade1 = 0;
 	int velocidade2 = 0;
 	int velocidade3 = 0;
@@ -15,6 +22,8 @@ public partial class MainPage : ContentPage
 	int velocidade = 0;
 	int larguraJanela = 0;
 	int alturaJanela = 0;
+	int tempoPulando = 0;
+	int tempoNoAr = 0;
 
 	public MainPage()
 	{
@@ -27,6 +36,7 @@ public partial class MainPage : ContentPage
 		base.OnSizeAllocated(width, height);
 		CorrigeTamanhoCenario(width, height);
 		CalculaVelocidade(width);
+
 	}
 
 	void CalculaVelocidade(double width)
@@ -94,12 +104,57 @@ public partial class MainPage : ContentPage
 		}
 	}
 
+	void AplicaGravidade()
+	{
+		if(player.GetY() < 0)
+			player.MoveY(forcaGravidade);
+		else if(player.GetY() >= 0)
+		{
+			player.SetY(0);
+			estaNoChao = true;
+		}	
+	}
+
+	void AplicaPulo()
+	{
+		estaNoChao = false;
+		if(estaPulando && tempoPulando >= maxTempoPulando)
+		{
+			estaPulando = false;
+			estaNoAr = false;
+			tempoNoAr = 0;
+		}
+		else if(estaNoAr && tempoNoAr >= maxTempoPulando)
+		{
+			estaPulando = false;
+			estaNoAr = false;
+			tempoPulando = 0;
+			tempoNoAr = 0;
+		}
+		else if(estaPulando && tempoPulando < maxTempoPulando)
+		{
+			player.MoveY(-forcaPulo);
+			tempoPulando++;
+		}
+		else if(estaNoAr)
+			tempoNoAr++;
+	}
+
+
 	async Task Desenha()
 	{
 		while (!estaMorto)
 		{
 			GerenciaCenario();
+			if(inimigos != null)
+				inimigos.Desenha(velocidade);	
+			if(!estaPulando && !estaNoAr)
+			{
+				AplicaGravidade();
 			player.Desenha();
+			}
+			else 
+				AplicaPulo();
 
 			await Task.Delay(tempoEntreFrames);
 		}

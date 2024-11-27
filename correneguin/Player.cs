@@ -27,4 +27,19 @@ public class Player : Animacao
         SetAnimacaoAtiva(1);
         Play();
     }
+
+    public void MoveY(int n)
+    {
+        compImagem.TranslationY += n;
+    }
+
+    public double GetY()
+    {
+        return compImagem.TranslationY;
+    }
+
+    public void SetY(double n)
+    {
+        compImagem.TranslationY = n;
+    }
 }
